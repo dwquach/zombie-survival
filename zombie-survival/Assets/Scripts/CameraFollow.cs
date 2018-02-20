@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
+     public Transform player;
+     public float smoothing = 5f;
+ 
+     private Vector3 offset;
+    private Vector3 direction;
 
-    public GameObject target;
-    public float damping = 1;
-    Vector3 offset;
-
-    void Start()
-    {
-        offset = target.transform.position - transform.position;
-    }
-
-    void LateUpdate()
-    {
+     void Start () {
+         offset = new Vector3(0, -2f, 2f);
+         direction = offset.normalized;
+     }
+ 
+     void LateUpdate()
+     {
         float currentAngle = transform.eulerAngles.y;
-        float desiredAngle = target.transform.eulerAngles.y;
-        float angle = Mathf.LerpAngle(currentAngle, desiredAngle, Time.deltaTime * damping);
+        float desiredAngle = player.eulerAngles.y;
+        float angle = Mathf.LerpAngle(currentAngle, desiredAngle, Time.deltaTime * smoothing);
 
-        Quaternion rotation = Quaternion.Euler(0, angle, 0);
-        transform.position = target.transform.position - (rotation * offset);
-
-        transform.LookAt(target.transform);
+        Quaternion rotation = Quaternion.Euler(transform.eulerAngles.x, angle, transform.eulerAngles.z);
+        transform.position = player.position - (rotation * offset);
+        transform.rotation = rotation;
+      
     }
 }
 
