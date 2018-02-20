@@ -35,7 +35,7 @@ public class EnemyHealth : MonoBehaviour {
     }
 
 
-    public void TakeDamage(int amount, Vector3 hitPoint)
+    public void TakeDamage(int amount)
     {
         // If the enemy is dead...
         if (isDead)
@@ -71,6 +71,8 @@ public class EnemyHealth : MonoBehaviour {
         // Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
+
+        StartSinking();
     }
 
 

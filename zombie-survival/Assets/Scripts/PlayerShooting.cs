@@ -69,10 +69,11 @@ public class PlayerShooting : MonoBehaviour {
 
         // Enable the line renderer and set it's first position to be the end of the gun.
         gunLine.enabled = true;
-        gunLine.SetPosition(0, transform.position);
+        Vector3 gunPosition = new Vector3(transform.position.x, transform.position.y + 1.75f, transform.position.z);
+        gunLine.SetPosition(0, gunPosition);
 
         // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
-        shootRay.origin = transform.position;
+        shootRay.origin = gunPosition;
         shootRay.direction = transform.forward;
 
         // Perform the raycast against gameobjects on the shootable layer and if it hits something...
@@ -85,7 +86,7 @@ public class PlayerShooting : MonoBehaviour {
             if (enemyHealth != null)
             {
                 // ... the enemy should take damage.
-                enemyHealth.TakeDamage(damagePerShot, shootHit.point);
+                enemyHealth.TakeDamage(damagePerShot);
             }
 
             // Set the second position of the line renderer to the point the raycast hit.
