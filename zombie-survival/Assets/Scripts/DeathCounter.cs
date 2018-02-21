@@ -4,35 +4,61 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 public class DeathCounter : MonoBehaviour {
-
+	public static int wavesDone;
 	public static int deathRemaining;
 	public TMP_Text deathText;
 	public static int zombiesMade;
+	public static int zombiesMadeLimit;
 	public GameObject upgrade;
+	public GameObject winnerCanvas;
+	public bool done;
+	public bool resetDone;
 	// Use this for initialization
 	void Start () {
 		upgrade = GameObject.FindGameObjectWithTag("Finish");
+		winnerCanvas = GameObject.FindGameObjectWithTag("Finish2");
 		upgrade.SetActive (false);
+		winnerCanvas.SetActive (false);
 		deathText = GetComponent<TMP_Text> ();
-
-		deathRemaining = 1;
+		zombiesMadeLimit = 10;
+		deathRemaining = 10;
 		zombiesMade = 0;
+		wavesDone = 0;
+		done = false;
+		resetDone = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
 		deathText.text = "Zombies Remaining: " + deathRemaining;
-
+		Debug.Log ("Zombie respawn time: "+EnemySpawner.spawnTime);
 		if (deathRemaining == 0) {
+			if (!resetDone) {
+				wavesDone++;
+				resetDone = true;
+			}
 			Time.timeScale = 0;
-			upgrade.SetActive(true);
+			if (wavesDone == 10) {
+				done = true;
+				winnerCanvas.SetActive (true);
+			} 
+			if(!done) {
+				
+				upgrade.SetActive(true);
+			}
+
+
 		}
 	}
 
 	public void resetWave(){
-		deathRemaining = 50;
+		zombiesMadeLimit += 5;
+		deathRemaining =zombiesMadeLimit;
 		zombiesMade = 0;
 		Time.timeScale = 1;
+		resetDone = false;
+		EnemySpawner.spawnTime *= .95f;
 	}
 
 

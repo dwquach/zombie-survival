@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour {
 
     public PlayerHealth playerHealth;       // Reference to the player's heatlh.
     public GameObject enemy;                // The enemy prefab to be spawned.
-    public float spawnTime = 1f;            // How long between each spawn.
+    public static float spawnTime = 1f;            // How long between each spawn.
     public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
 
 
@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour {
 
         // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
 		Debug.Log(spawnPoints.Length);
-		if (DeathCounter.zombiesMade < 50) {
+		if (DeathCounter.zombiesMade < DeathCounter.zombiesMadeLimit) {
 			DeathCounter.zombiesMade++;
 			Debug.Log (DeathCounter.zombiesMade);
 			Instantiate (enemy, new Vector3 (Random.Range (-21, 18), 0, Random.Range (-22, 22)), spawnPoints [spawnPointIndex].rotation);

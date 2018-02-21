@@ -9,6 +9,7 @@ TagManager:
   - Shootable
   - Gun
   - Counter
+  - Finish2
   layers:
   - Default
   - TransparentFX

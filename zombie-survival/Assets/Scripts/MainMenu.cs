@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+
+	public void goToMainMenu(){
+		SceneManager.LoadScene ("Main Menu");
+	}
 	public void PlayGame(){
+		Time.timeScale = 1;
 		SceneManager.LoadScene ("Main");
 	}
 
@@ -20,5 +25,6 @@ public class MainMenu : MonoBehaviour {
 
 	public void ContinueGame(){
 		Time.timeScale = 1;
+		Debug.Log ("game time back to 1");
 	}
 }
