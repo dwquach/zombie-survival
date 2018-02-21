@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour {
     void Start()
     {
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
+
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 
@@ -31,6 +32,10 @@ public class EnemySpawner : MonoBehaviour {
 
         // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
 		Debug.Log(spawnPoints.Length);
-		Instantiate(enemy, new Vector3(Random.Range(-21,18), 0, Random.Range(-22,22)), spawnPoints[spawnPointIndex].rotation);
+		if (DeathCounter.zombiesMade < 50) {
+			DeathCounter.zombiesMade++;
+			Debug.Log (DeathCounter.zombiesMade);
+			Instantiate (enemy, new Vector3 (Random.Range (-21, 18), 0, Random.Range (-22, 22)), spawnPoints [spawnPointIndex].rotation);
+		}
     }
 }

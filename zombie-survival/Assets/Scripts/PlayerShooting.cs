@@ -56,6 +56,14 @@ public class PlayerShooting : MonoBehaviour {
         gunLight.enabled = false;
     }
 
+	public void increaseDamage(){
+		damagePerShot += 20;
+	}
+
+
+
+
+
     void Shoot()
     {
         // Reset the timer.

@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour {
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead;                                // Whether the enemy is dead.
     bool isSinking; // Whether the enemy has started sinking through the floor.
-
+	public Text t;
 	public static int deathsLeft = 50;
 
 	void Start(){
@@ -104,5 +104,7 @@ public class EnemyHealth : MonoBehaviour {
 
         // After 2 seconds destory the enemy.
         Destroy(gameObject, 2f);
+
+		--DeathCounter.deathRemaining;
     }
 }

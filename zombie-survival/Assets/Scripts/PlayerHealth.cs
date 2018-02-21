@@ -77,6 +77,14 @@ public class PlayerHealth : MonoBehaviour {
         }
     }
 
+	public void increaseHealth(){
+		startingHealth += 50;
+	}
+
+	public void resetHealth(){
+		startingHealth = 100;
+	}
+
 
     void Death()
     {
