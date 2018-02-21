@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 195867842327990082}
   - component: {fileID: 114748982442201956}
   - component: {fileID: 82056275208666610}
+  - component: {fileID: 114177933376349002}
   m_Layer: 9
   m_Name: Zombie
   m_TagString: Shootable
@@ -1465,7 +1466,7 @@ Transform:
   m_GameObject: {fileID: 1467792508905814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.33, y: 0, z: 0}
-  m_LocalScale: {x: 5.4, y: 5.4, z: 2}
+  m_LocalScale: {x: 5.4, y: 5.4, z: 4}
   m_Children:
   - {fileID: 4017489802312116}
   - {fileID: 4218919804056074}
@@ -1613,6 +1614,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114177933376349002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1467792508905814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8089be2184f14504c8219be28c906b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
 --- !u!114 &114686155560939526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1639,6 +1653,7 @@ MonoBehaviour:
   currentHealth: 0
   sinkSpeed: 2.5
   deathClip: {fileID: 8300000, guid: f1c5ab657d83a4b2f8f21c203697e657, type: 3}
+  t: {fileID: 0}
 --- !u!135 &135303007461885844
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1649,7 +1664,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.11
+  m_Radius: 0.18
   m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!136 &136124662893044282
 CapsuleCollider:

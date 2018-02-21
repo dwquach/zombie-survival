@@ -42,6 +42,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             // ... set the colour of the damageImage to the flash colour.
             damageImage.color = flashColour;
+            Debug.Log("TAKEN");
         }
         // Otherwise...
         else
@@ -57,6 +58,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public void TakeDamage(int amount)
     {
+        
         // Set the damaged flag so the screen will flash.
         damaged = true;
 

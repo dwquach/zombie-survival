@@ -25,7 +25,7 @@ public class PlayerShooting : MonoBehaviour {
 
         // Set up the references.
         gunLine = gun.GetComponent<LineRenderer>();
-        gunAudio = GetComponent<AudioSource>();
+        gunAudio = gun.GetComponent<AudioSource>();
         gunLight = gun.GetComponent<Light>();
     }
 
@@ -37,6 +37,7 @@ public class PlayerShooting : MonoBehaviour {
         // If the Fire1 button is being press and it's time to fire...
         if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
         {
+            Debug.Log("FIRED");
             // ... shoot the gun.
             Shoot();
         }
@@ -59,9 +60,6 @@ public class PlayerShooting : MonoBehaviour {
 	public void increaseDamage(){
 		damagePerShot += 20;
 	}
-
-
-
 
 
     void Shoot()
