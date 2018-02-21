@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using TMPro;
 
 public class EnemyHealth : MonoBehaviour {
 
@@ -10,16 +12,22 @@ public class EnemyHealth : MonoBehaviour {
     public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
     public AudioClip deathClip;                 // The sound to play when the enemy dies.
 
-
     Animator anim;                              // Reference to the animator.
     AudioSource enemyAudio;                     // Reference to the audio source.
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead;                                // Whether the enemy is dead.
-    bool isSinking;                             // Whether the enemy has started sinking through the floor.
+    bool isSinking; // Whether the enemy has started sinking through the floor.
 
+	public static int deathsLeft = 50;
+
+	void Start(){
+		
+	}
 
     void Awake()
     {
+		
+
         anim = GetComponent<Animator>();
         enemyAudio = GetComponent<AudioSource>();
         capsuleCollider = GetComponent<CapsuleCollider>();
@@ -28,6 +36,8 @@ public class EnemyHealth : MonoBehaviour {
 
     void Update()
     {
+		
+
         if (isSinking)
         {
             transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
@@ -59,8 +69,13 @@ public class EnemyHealth : MonoBehaviour {
 
     void Death()
     {
+		
         // The enemy is dead.
         isDead = true;
+
+
+
+
 
         // Turn the collider into a trigger so shots can pass through it.
         capsuleCollider.isTrigger = true;
