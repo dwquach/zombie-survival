@@ -16,9 +16,13 @@ public class PlayerShooting : MonoBehaviour {
     AudioSource gunAudio;                           // Reference to the audio source.
     Light gunLight;                                 // Reference to the light component.
     float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
+	public static int bulletCount;
+
 
     void Awake()
     {
+		
+		bulletCount = 30;
         // Create a layer mask for the Shootable layer.
         shootableMask = LayerMask.GetMask("Shootable");
         GameObject gun = GameObject.FindGameObjectWithTag("Gun");
@@ -33,7 +37,9 @@ public class PlayerShooting : MonoBehaviour {
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
-
+		if (Input.GetKeyDown ("r")) {
+			bulletCount = 30;
+		}
         // If the Fire1 button is being press and it's time to fire...
         if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
         {
@@ -63,46 +69,47 @@ public class PlayerShooting : MonoBehaviour {
 
 
     void Shoot()
-    {
-        // Reset the timer.
-        timer = 0f;
+	{
 
-        // Play the gun shot audioclip.
-        gunAudio.Play();
+		if (bulletCount > 0) {
+			bulletCount--;
+			// Reset the timer.
+			timer = 0f;
 
-        // Enable the light.
-        gunLight.enabled = true;
+			// Play the gun shot audioclip.
+			gunAudio.Play ();
 
-        // Enable the line renderer and set it's first position to be the end of the gun.
-        gunLine.enabled = true;
-        Vector3 gunPosition = new Vector3(transform.position.x, transform.position.y + 1.75f, transform.position.z);
-        gunLine.SetPosition(0, gunPosition);
+			// Enable the light.
+			gunLight.enabled = true;
 
-        // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
-        shootRay.origin = gunPosition;
-        shootRay.direction = transform.forward;
+			// Enable the line renderer and set it's first position to be the end of the gun.
+			gunLine.enabled = true;
+			Vector3 gunPosition = new Vector3 (transform.position.x, transform.position.y + 1.75f, transform.position.z);
+			gunLine.SetPosition (0, gunPosition);
 
-        // Perform the raycast against gameobjects on the shootable layer and if it hits something...
-        if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
-        {
-            // Try and find an EnemyHealth script on the gameobject hit.
-            EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
+			// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
+			shootRay.origin = gunPosition;
+			shootRay.direction = transform.forward;
 
-            // If the EnemyHealth component exist...
-            if (enemyHealth != null)
-            {
-                // ... the enemy should take damage.
-                enemyHealth.TakeDamage(damagePerShot);
-            }
+			// Perform the raycast against gameobjects on the shootable layer and if it hits something...
+			if (Physics.Raycast (shootRay, out shootHit, range, shootableMask)) {
+				// Try and find an EnemyHealth script on the gameobject hit.
+				EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth> ();
 
-            // Set the second position of the line renderer to the point the raycast hit.
-            gunLine.SetPosition(1, shootHit.point);
-        }
+				// If the EnemyHealth component exist...
+				if (enemyHealth != null) {
+					// ... the enemy should take damage.
+					enemyHealth.TakeDamage (damagePerShot);
+				}
+
+				// Set the second position of the line renderer to the point the raycast hit.
+				gunLine.SetPosition (1, shootHit.point);
+			}
         // If the raycast didn't hit anything on the shootable layer...
-        else
-        {
-            // ... set the second position of the line renderer to the fullest extent of the gun's range.
-            gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
-        }
-    }
+        	else {
+				// ... set the second position of the line renderer to the fullest extent of the gun's range.
+				gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
+			}
+		}
+	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour {
 
     public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
-    public int attackDamage = 10;               // The amount of health taken away per attack.
+    public float attackDamage = 10.0f;               // The amount of health taken away per attack.
 
     Animator anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
@@ -14,7 +14,9 @@ public class EnemyAttack : MonoBehaviour {
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
 
-
+	public void reduceDamage(){
+		attackDamage *= .67f;
+	}
     void Awake()
     {
         // Setting up the references.
@@ -66,6 +68,9 @@ public class EnemyAttack : MonoBehaviour {
             anim.SetTrigger("PlayerDead");
         }
     }
+
+
+
 
 
     void Attack()

@@ -11,6 +11,8 @@ TagManager:
   - Counter
   - Finish2
   - Finish3
+  - bullet
+  - Menu
   layers:
   - Default
   - TransparentFX

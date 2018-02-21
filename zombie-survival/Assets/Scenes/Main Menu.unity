@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019014500}
+      - m_Target: {fileID: 2093311085}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -528,7 +528,7 @@ RectTransform:
   - {fileID: 321950590}
   - {fileID: 1379270177}
   - {fileID: 1169454054}
-  - {fileID: 1019014501}
+  - {fileID: 1612495144}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -914,6 +914,25 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1169454053}
+    - target: {fileID: 1213859726508488, guid: 8ef667ac9df43f34fb3a26f8725fd6cb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224406737362445978, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114732321732107128, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1169454053}
+    - target: {fileID: 114732321732107128, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ef667ac9df43f34fb3a26f8725fd6cb, type: 2}
   m_IsPrefabParent: 0
@@ -1055,7 +1074,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1212,7 +1231,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1298,16 +1317,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1019014500 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1033383846328098, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 582069621}
---- !u!224 &1019014501 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224624771479720212, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 582069621}
 --- !u!1 &1169454053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,7 +1514,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1661,7 +1670,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1682,3 +1691,13 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1493577019}
+--- !u!224 &1612495144 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224406737362445978, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+    type: 2}
+  m_PrefabInternal: {fileID: 582069621}
+--- !u!1 &2093311085 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1213859726508488, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+    type: 2}
+  m_PrefabInternal: {fileID: 582069621}

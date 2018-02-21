@@ -11,6 +11,7 @@ public class DeathCounter : MonoBehaviour {
 	public static int zombiesMadeLimit;
 	public GameObject upgrade;
 	public GameObject winnerCanvas;
+	public GameObject inGameMenu;
 	public bool done;
 	public bool resetDone;
 
@@ -24,10 +25,12 @@ public class DeathCounter : MonoBehaviour {
 		winnerCanvas = GameObject.FindGameObjectWithTag("Finish2");
         loseScreen = GameObject.FindGameObjectWithTag("Finish3");
         player = GameObject.FindGameObjectWithTag("Player");
+		inGameMenu = GameObject.FindGameObjectWithTag ("Menu");
         playerHealth = player.GetComponent<PlayerHealth>();
         upgrade.SetActive (false);
 		winnerCanvas.SetActive (false);
         loseScreen.SetActive(false);
+		inGameMenu.SetActive (true);
 		deathText = GetComponent<TMP_Text> ();
 		zombiesMadeLimit = 10;
 		deathRemaining = 10;
@@ -36,13 +39,15 @@ public class DeathCounter : MonoBehaviour {
 		done = false;
 		resetDone = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
         if (playerHealth.currentHealth <= 0)
         {
             loseScreen.SetActive(true);
+			Time.timeScale = 0;
+			inGameMenu.SetActive (false);
         }
 
 		deathText.text = "Zombies Remaining: " + deathRemaining;
@@ -56,9 +61,10 @@ public class DeathCounter : MonoBehaviour {
 			if (wavesDone == 10) {
 				done = true;
 				winnerCanvas.SetActive (true);
+				inGameMenu.SetActive (false);
 			} 
 			if(!done) {
-				
+				inGameMenu.SetActive (false);
 				upgrade.SetActive(true);
 			}
 
@@ -73,6 +79,8 @@ public class DeathCounter : MonoBehaviour {
 		Time.timeScale = 1;
 		resetDone = false;
 		EnemySpawner.spawnTime *= .95f;
+		PlayerShooting.bulletCount = 30;
+		inGameMenu.SetActive (true);
 	}
 
 
