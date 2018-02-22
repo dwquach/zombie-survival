@@ -235,12 +235,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\EnvironmentPack\LowPolySurvivalEssentials\Example\Scripts\AnimatedFire.cs" />
+    <Compile Include="Assets\Scripts\AddHealth.cs" />
+    <Compile Include="Assets\Scripts\BulletCounter.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\DeathCounter.cs" />
     <Compile Include="Assets\Scripts\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\ItemSpin.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -283,11 +286,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Blood decal pack\readme.txt" />
-    <None Include="Assets\BloodSFX\ReadMe.txt" />
     <None Include="Assets\EnvironmentPack\LowPolyShaders\Shaders\LowPolyPBRShader.shader" />
     <None Include="Assets\EnvironmentPack\LowPolyShaders\Shaders\LowPolyUnlitShader.shader" />
-    <None Include="Assets\Horror_Music\Music_Read_Me.txt" />
-    <None Include="Assets\ShootSounds\SoldierSoundsPack\ReadMe!.txt" />
+    <None Include="Assets\Sounds\BloodSFX\ReadMe.txt" />
+    <None Include="Assets\Sounds\Horror_Music\Music_Read_Me.txt" />
+    <None Include="Assets\Sounds\ShootSounds\SoldierSoundsPack\ReadMe!.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />

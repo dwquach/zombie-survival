@@ -7,6 +7,8 @@ public class PlayerShooting : MonoBehaviour {
     public int damagePerShot = 20;                  // The damage inflicted by each bullet.
     public float timeBetweenBullets = 0.15f;        // The time between each shot.
     public float range = 100f;                      // The distance the gun can fire.
+    public AudioClip shootSound;
+    public AudioClip reloadSound;
 
     float timer;                                    // A timer to determine when to fire.
     Ray shootRay;                                   // A ray from the gun end forwards.
@@ -17,7 +19,7 @@ public class PlayerShooting : MonoBehaviour {
     Light gunLight;                                 // Reference to the light component.
     float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
 	public static int bulletCount;
-
+    private bool reloading = false;
 
     void Awake()
     {
@@ -33,17 +35,27 @@ public class PlayerShooting : MonoBehaviour {
         gunLight = gun.GetComponent<Light>();
     }
 
+    private IEnumerator reload()
+    {
+        reloading = true;
+        gunAudio.clip = reloadSound;
+        gunAudio.Play();
+        yield return new WaitForSeconds(3);
+        bulletCount = 30;
+        reloading = false;
+    }
+
     void Update()
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
-		if (Input.GetKeyDown ("r")) {
-			bulletCount = 30;
+		if (Input.GetKeyDown ("r") && bulletCount < 30 && !reloading)
+        {
+            StartCoroutine(reload());
 		}
         // If the Fire1 button is being press and it's time to fire...
-        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
+        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && !reloading)
         {
-            Debug.Log("FIRED");
             // ... shoot the gun.
             Shoot();
         }
@@ -76,7 +88,8 @@ public class PlayerShooting : MonoBehaviour {
 			// Reset the timer.
 			timer = 0f;
 
-			// Play the gun shot audioclip.
+            // Play the gun shot audioclip.
+            gunAudio.clip = shootSound;
 			gunAudio.Play ();
 
 			// Enable the light.

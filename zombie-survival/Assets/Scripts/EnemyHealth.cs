@@ -11,13 +11,14 @@ public class EnemyHealth : MonoBehaviour {
     public int currentHealth;                   // The current health the enemy has.
     public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
     public AudioClip deathClip;                 // The sound to play when the enemy dies.
+    public GameObject healthPack;               // GameObject that heals the player when collected.
+    public float healthSpawnHeight = 0.9f;      // Height at which healthPack spawns
 
     Animator anim;                              // Reference to the animator.
     AudioSource enemyAudio;                     // Reference to the audio source.
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead;                                // Whether the enemy is dead.
     bool isSinking; // Whether the enemy has started sinking through the floor.
-	public Text t;
 	public static int deathsLeft = 50;
 
 	void Start(){
@@ -73,10 +74,6 @@ public class EnemyHealth : MonoBehaviour {
         // The enemy is dead.
         isDead = true;
 
-
-
-
-
         // Turn the collider into a trigger so shots can pass through it.
         capsuleCollider.isTrigger = true;
 
@@ -86,6 +83,11 @@ public class EnemyHealth : MonoBehaviour {
         // Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
+
+        if (Random.Range(1, 10) == 1)
+        {
+            Instantiate(healthPack, new Vector3(transform.position.x, healthSpawnHeight, transform.position.z), Quaternion.Euler(90, 0, 0));
+        }
 
         StartSinking();
     }
