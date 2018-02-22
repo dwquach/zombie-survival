@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class DeathCounter : MonoBehaviour {
 	public static int wavesDone;
 	public static int deathRemaining;
@@ -50,7 +51,7 @@ public class DeathCounter : MonoBehaviour {
 			inGameMenu.SetActive (false);
         }
 
-		deathText.text = "Zombies Remaining: " + deathRemaining;
+		deathText.text = "" + deathRemaining;
 		Debug.Log ("Zombie respawn time: "+EnemySpawner.spawnTime);
 		if (deathRemaining == 0) {
 			if (!resetDone) {
@@ -58,7 +59,7 @@ public class DeathCounter : MonoBehaviour {
 				resetDone = true;
 			}
 			Time.timeScale = 0;
-			if (wavesDone == 10) {
+			if (wavesDone == 5) {
 				done = true;
 				winnerCanvas.SetActive (true);
 				inGameMenu.SetActive (false);
@@ -79,7 +80,6 @@ public class DeathCounter : MonoBehaviour {
 		Time.timeScale = 1;
 		resetDone = false;
 		EnemySpawner.spawnTime *= .95f;
-		PlayerShooting.bulletCount = 30;
 		inGameMenu.SetActive (true);
 	}
 

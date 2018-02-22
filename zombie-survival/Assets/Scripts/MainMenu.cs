@@ -14,6 +14,11 @@ public class MainMenu : MonoBehaviour {
 		SceneManager.LoadScene ("Main");
 	}
 
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+    }
 
 	public void QuitGame(){
 		Application.Quit ();
@@ -25,6 +30,5 @@ public class MainMenu : MonoBehaviour {
 
 	public void ContinueGame(){
 		Time.timeScale = 1;
-		Debug.Log ("game time back to 1");
 	}
 }

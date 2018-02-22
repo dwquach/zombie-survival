@@ -248,6 +248,7 @@
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerShooting.cs" />
+    <Compile Include="Assets\Scripts\WaveCounter.cs" />
     <Compile Include="Assets\Smart Turret Template\Scripts\Actor.cs" />
     <Compile Include="Assets\Smart Turret Template\Scripts\Turret.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

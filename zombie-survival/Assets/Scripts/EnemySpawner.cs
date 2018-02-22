@@ -31,11 +31,9 @@ public class EnemySpawner : MonoBehaviour {
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
         // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
-		Debug.Log(spawnPoints.Length);
 		if (DeathCounter.zombiesMade < DeathCounter.zombiesMadeLimit) {
 			DeathCounter.zombiesMade++;
-			Debug.Log (DeathCounter.zombiesMade);
-			Instantiate (enemy, new Vector3 (Random.Range (-21, 18), 0, Random.Range (-22, 22)), spawnPoints [spawnPointIndex].rotation);
+			Instantiate (enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
 		}
     }
 }

@@ -7,6 +7,7 @@ public class PlayerShooting : MonoBehaviour {
     public int damagePerShot = 20;                  // The damage inflicted by each bullet.
     public float timeBetweenBullets = 0.15f;        // The time between each shot.
     public float range = 100f;                      // The distance the gun can fire.
+    public int maxBulletCount = 20;
     public AudioClip shootSound;
     public AudioClip reloadSound;
 
@@ -24,7 +25,7 @@ public class PlayerShooting : MonoBehaviour {
     void Awake()
     {
 		
-		bulletCount = 30;
+		bulletCount = maxBulletCount;
         // Create a layer mask for the Shootable layer.
         shootableMask = LayerMask.GetMask("Shootable");
         GameObject gun = GameObject.FindGameObjectWithTag("Gun");
@@ -41,7 +42,7 @@ public class PlayerShooting : MonoBehaviour {
         gunAudio.clip = reloadSound;
         gunAudio.Play();
         yield return new WaitForSeconds(3);
-        bulletCount = 30;
+        bulletCount = maxBulletCount;
         reloading = false;
     }
 
@@ -78,6 +79,11 @@ public class PlayerShooting : MonoBehaviour {
 	public void increaseDamage(){
 		damagePerShot += 20;
 	}
+
+    public void incraseAmmo()
+    {
+        maxBulletCount += 10;
+    }
 
 
     void Shoot()

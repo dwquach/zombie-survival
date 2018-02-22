@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour {
 
     public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
-    public float attackDamage = 10.0f;               // The amount of health taken away per attack.
+    public float attackDamage = 40f;               // The amount of health taken away per attack.
 
     Animator anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
@@ -17,6 +17,7 @@ public class EnemyAttack : MonoBehaviour {
 	public void reduceDamage(){
 		attackDamage *= .67f;
 	}
+
     void Awake()
     {
         // Setting up the references.
@@ -82,8 +83,8 @@ public class EnemyAttack : MonoBehaviour {
         if (playerHealth.currentHealth > 0)
         {
             // ... damage the player.
+            Debug.Log("HI " + attackDamage);
             playerHealth.TakeDamage(attackDamage);
-            Debug.Log("ATTACKED");
         }
     }
 }

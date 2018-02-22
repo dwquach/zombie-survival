@@ -1626,7 +1626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
-  attackDamage: 0.6060713
+  attackDamage: 40
 --- !u!114 &114686155560939526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b7f5e6001f1fd4398a7ed84ed850d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth: 200
   currentHealth: 0
   sinkSpeed: 2.5
   deathClip: {fileID: 8300000, guid: f1c5ab657d83a4b2f8f21c203697e657, type: 3}
@@ -1665,7 +1665,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.18
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!136 &136124662893044282
 CapsuleCollider:
