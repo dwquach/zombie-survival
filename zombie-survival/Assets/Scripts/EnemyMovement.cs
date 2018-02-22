@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour {
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        nav.speed = Random.Range(5, 12);
     }
 
 

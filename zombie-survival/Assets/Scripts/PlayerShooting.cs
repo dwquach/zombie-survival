@@ -10,6 +10,8 @@ public class PlayerShooting : MonoBehaviour {
     public int maxBulletCount = 20;
     public AudioClip shootSound;
     public AudioClip reloadSound;
+    public GameObject menu;
+    public GameObject menuButton;
 
     float timer;                                    // A timer to determine when to fire.
     Ray shootRay;                                   // A ray from the gun end forwards.
@@ -48,6 +50,18 @@ public class PlayerShooting : MonoBehaviour {
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            menuButton.SetActive(false);
+            menu.SetActive(true);
+        } else if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 0)
+        {
+            menu.SetActive(false);
+            menuButton.SetActive(true);
+            Time.timeScale = 1;
+        }
+
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
 		if (Input.GetKeyDown ("r") && bulletCount < 30 && !reloading)
@@ -77,7 +91,7 @@ public class PlayerShooting : MonoBehaviour {
     }
 
 	public void increaseDamage(){
-		damagePerShot += 20;
+		damagePerShot += 10;
 	}
 
     public void incraseAmmo()
@@ -129,6 +143,9 @@ public class PlayerShooting : MonoBehaviour {
 				// ... set the second position of the line renderer to the fullest extent of the gun's range.
 				gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
 			}
-		}
+		} else
+        {
+            StartCoroutine(reload());
+        }
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour {
 
     public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
-    public float attackDamage = 40f;               // The amount of health taken away per attack.
+    public float maxDamage = 30f;               // Max health taken per attack.
 
     Animator anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
@@ -13,9 +13,10 @@ public class EnemyAttack : MonoBehaviour {
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
+    private float currentDamage;
 
 	public void reduceDamage(){
-		attackDamage *= .67f;
+		currentDamage *= .67f;
 	}
 
     void Awake()
@@ -25,6 +26,7 @@ public class EnemyAttack : MonoBehaviour {
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
+        currentDamage = maxDamage;
     }
 
 
@@ -67,6 +69,7 @@ public class EnemyAttack : MonoBehaviour {
         {
             // ... tell the animator the player is dead.
             anim.SetTrigger("PlayerDead");
+            currentDamage = maxDamage;
         }
     }
 
@@ -75,16 +78,12 @@ public class EnemyAttack : MonoBehaviour {
 
 
     void Attack()
-    {
-        // Reset the timer.
+    { 
         timer = 0f;
 
-        // If the player has health to lose...
         if (playerHealth.currentHealth > 0)
         {
-            // ... damage the player.
-            Debug.Log("HI " + attackDamage);
-            playerHealth.TakeDamage(attackDamage);
+            playerHealth.TakeDamage(currentDamage);
         }
     }
 }

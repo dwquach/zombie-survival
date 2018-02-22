@@ -933,6 +933,148 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
+    - target: {fileID: 114776557185521168, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_text
+      value: The goal of the game is to kill all the zombies in each wave. Zombies
+        will somtimes drop health packs that heal you. After each wave you can select
+        an upgrade to help you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 224600958803060416, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 224600958803060416, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -190
+      objectReference: {fileID: 0}
+    - target: {fileID: 114695253690873564, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114695253690873564, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114715645533014720, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114715645533014720, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114340732712529762, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114340732712529762, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776557185521168, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 141
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776557185521168, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 171
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776557185521168, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776557185521168, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776557185521168, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776557185521168, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776557185521168, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114807629401288428, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114807629401288428, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114259957166327684, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114259957166327684, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114492164606956602, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114492164606956602, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114508064319271986, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114508064319271986, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692988473917120, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692988473917120, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692988473917120, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224288105790950550, guid: 8ef667ac9df43f34fb3a26f8725fd6cb,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ef667ac9df43f34fb3a26f8725fd6cb, type: 2}
   m_IsPrefabParent: 0

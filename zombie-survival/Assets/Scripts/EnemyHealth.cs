@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour {
     public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
     public AudioClip deathClip;                 // The sound to play when the enemy dies.
     public GameObject healthPack;               // GameObject that heals the player when collected.
-    public float healthSpawnHeight = 0.9f;      // Height at which healthPack spawns
+    public float healthSpawnHeight = 1.5f;      // Height at which healthPack spawns
 
     Animator anim;                              // Reference to the animator.
     AudioSource enemyAudio;                     // Reference to the audio source.

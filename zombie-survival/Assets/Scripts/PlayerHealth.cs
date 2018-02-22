@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour {
     PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
     bool isDead;                                                // Whether the player is dead.
     bool damaged;                                               // True when the player gets damaged.
+    RectTransform sliderSize;
 
 
     void Awake()
@@ -29,6 +30,7 @@ public class PlayerHealth : MonoBehaviour {
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
         playerShooting = GetComponentInChildren<PlayerShooting>();
+        sliderSize = healthSlider.GetComponent<RectTransform>();
 
         // Set the initial health of the player.
         currentHealth = startingHealth;
@@ -42,7 +44,6 @@ public class PlayerHealth : MonoBehaviour {
         {
             // ... set the colour of the damageImage to the flash colour.
             damageImage.color = flashColour;
-            Debug.Log("TAKEN");
         }
         // Otherwise...
         else
@@ -85,6 +86,12 @@ public class PlayerHealth : MonoBehaviour {
 		currentHealth = startingHealth;
 		healthSlider.value = currentHealth;
 	}
+
+    public void increaseSliderSize()
+    {
+        sliderSize.sizeDelta = new Vector2(sliderSize.rect.width + 25, sliderSize.rect.height);
+        sliderSize.position = new Vector3(sliderSize.position.x + 12.5f, sliderSize.position.y, sliderSize.position.z);
+    }
 
 
     void Death()

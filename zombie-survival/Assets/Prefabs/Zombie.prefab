@@ -1542,7 +1542,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 1
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1626,7 +1626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
-  attackDamage: 40
+  attackDamage: 30
 --- !u!114 &114686155560939526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1654,7 +1654,7 @@ MonoBehaviour:
   sinkSpeed: 2.5
   deathClip: {fileID: 8300000, guid: f1c5ab657d83a4b2f8f21c203697e657, type: 3}
   healthPack: {fileID: 1710523255802852, guid: 800dd6883c892df4297d46b95c9fcb96, type: 2}
-  healthSpawnHeight: 0.9
+  healthSpawnHeight: 1.5
 --- !u!135 &135303007461885844
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1676,7 +1676,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.16
+  m_Radius: 0.12
   m_Height: 1.08
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1875,7 +1875,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

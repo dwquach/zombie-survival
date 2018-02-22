@@ -51,8 +51,7 @@ public class DeathCounter : MonoBehaviour {
 			inGameMenu.SetActive (false);
         }
 
-		deathText.text = "" + deathRemaining;
-		Debug.Log ("Zombie respawn time: "+EnemySpawner.spawnTime);
+        deathText.text = "" + deathRemaining;
 		if (deathRemaining == 0) {
 			if (!resetDone) {
 				wavesDone++;

@@ -7,11 +7,9 @@ public class CameraFollow : MonoBehaviour {
      public float smoothing = 2.75f;
  
      private Vector3 offset;
-    private Vector3 direction;
 
      void Start () {
          offset = new Vector3(0, -2f, 2f);
-         direction = offset.normalized;
      }
  
      void LateUpdate()
