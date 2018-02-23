@@ -1625,8 +1625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8089be2184f14504c8219be28c906b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0.5
-  attackDamage: 30
+  timeBetweenAttacks: 1
+  maxDamage: 30
 --- !u!114 &114686155560939526
 MonoBehaviour:
   m_ObjectHideFlags: 1

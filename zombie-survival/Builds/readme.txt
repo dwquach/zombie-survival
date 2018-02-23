@@ -1,0 +1,3 @@
+This is a 3rd person survival game where the player must defeat waves of zombies. After each wave the player is given an option to upgrade health or damage done and must face a more difficult wave. Once the player gets past all 10 waves they receive the victory screen. Some in game features include reloading and health packs.
+
+We hope that players get a sense of pressure as zombies creep up on the player and waves become more difficult. As well we want the player to improvise and strategize how to use their resources efficiently.
